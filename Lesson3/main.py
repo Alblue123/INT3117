@@ -4,7 +4,14 @@ def calculate_price(fish_type, hours):
     if hours < 0:
         return "Input không hợp lệ"
 
-    if fish_type == "Cá Trắm Đen" or fish_type == "Cá Thu":
+    if fish_type == "Cá Trắm Đen":
+        if 0 <= hours <= 8:
+            return market_price * 1.2
+        elif 9 <= hours <= 16:
+            return market_price * 0.8
+        elif hours > 16:
+            return "Mang về cho heo ăn"
+    elif fish_type == "Cá Thu":
         if 0 <= hours <= 8:
             return market_price * 1.2
         elif 9 <= hours <= 16:
